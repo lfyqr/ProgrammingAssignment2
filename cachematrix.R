@@ -21,9 +21,6 @@ getinv <- function() inv
 list(set = set, get = get, setinv = setinv, getinv = getinv) 
 } 
 
-
-
-
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
 cacheSolve <- function(x, ...) {
         inv <- x$getinv()
@@ -32,16 +29,10 @@ cacheSolve <- function(x, ...) {
   message("getting cached data") 
    return(inv) 
   } 
-
- 
-
   data <- x$get() 
   inv <- solve(data, ...) 
   
    x$setinv(inv) 
-
- 
-
  inv 
 }
 
